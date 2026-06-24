@@ -295,8 +295,8 @@ function calculate() {
     // 1. 實付申購金額 = 【面額 X 成交價格 / 100 + 前手息】
     const purchaseAmount = (faceValue * price / 100) + previousInterest;
 
-    // ↳ 修正後公式：參考市值 = 參考價格 * 100
-    const refMarketValue = refPrice * 100;
+    // ↳ 修正後公式：參考市值 = 面額 X 參考價格 / 100
+    const refMarketValue = faceValue * refPrice / 100;
 
     // ↳ 參考損益 = 參考市值 - 實付申購金額
     const refProfitLoss = refMarketValue - purchaseAmount;
